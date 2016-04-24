@@ -38,17 +38,8 @@ cursor.execute("SELECT CODE, NAME, LAT, LONG\
     FROM [AWR].[dbo].[HSY_TARGETS]\
     ORDER BY CODE ASC")
 
-p = 'Pukinm\xe4ki'
-s = p.decode('iso-8859-1')
-print s
 
-print "code: stationname quality area wgs"
+print "code, stationname, lat, long"
 
 for row in cursor.fetchall():
-    for cell in row:
-        if (cell==None):
-            cell = "0"
-            
-        t = str(cell).decode('iso-8859-1')
-        print t
-    print ""
+    print row
